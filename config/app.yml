@@ -1,19 +1,19 @@
 app:
   name: "OpenDAX"
-  domain: "app.local"
+  domain: "devkube.com"
   subdomain: "www"
 render_protect: false 
 ssl:
-  enabled: false    # Make sure to enable during deployment
-  email: "support@example.com"
+  enabled: true    # Make sure to enable during deployment
+  email: "support@devkube.com"
 license:
   url: "https://www.openware.com/api/v2/tenko"
-  key: "PASTE-KEY-HERE"
+  key: "JED4Z-ZZQOQ-GD3BU-X1GB5-QTA6B"
 images:
-  peatio: rubykube/peatio:2.3.43
+  peatio: gcr.io/helios-stage/peatio:incremental-orderbook-5
   barong: rubykube/barong:2.3.36
-  frontend: quay.io/openware/baseapp-lite:2.3.20 # Check on quay.io/openware for latest tags
-  tower: quay.io/openware/tower-lite:2.3.130
+  frontend: gcr.io/helios-stage/baseapp:2.3.20-enterprise # Check on quay.io/openware for latest tags
+  tower: quay.io/openware/tower-lite:2.3.128
   postmaster: quay.io/openware/postmaster:2.3.4
 vendor:
   frontend: git@github.com:openware/baseapp.git
@@ -23,12 +23,12 @@ vault:
 storage:
   provider: "Google"
   bucketName: "opendax-barong-docs-bucket"
-  accessKey: "**********"
-  secretKey: "**********"
+  accessKey: "GOOGAXQCQJVXZOZC2AQLYZNR"
+  secretKey: "mQ13RPfVGYAO0/WShqwboy6onBnhVIKCQkhWKRWp"
 twilio:
-  phone_number: "+15005550000"
-  account_sid: "changeme"
-  auth_token: "changeme"
+  phone_number: "+18556312248"
+  account_sid: ACd944e3b2e1a4c5e37bfa8d9f11a245b6
+  auth_token: 694e60aff87c5d1a66c272a62f931aab
 recaptcha:
   type: "none"
   siteKey: "changeme"
@@ -37,24 +37,27 @@ smtp:
   host: smtp.sendgrid.net
   port: 2525
   user: apikey
-  password: changeme
-  sender_email: noreply@postmaster.com
-  sender_name: Postmaster
+  password: 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
+  sender_email: noreply@devkube.com
+  sender_name: Devkube
 wallets:
-  - kind: deposit
-    address: "changeme"
-    max_balance: 0.0
-    secret: changeme
-  - kind: hot
-    address: "changeme"
-    max_balance: 100.0
-    secret: changeme
-  - kind: warm
-    address: "changeme"
-    max_balance: 1000.0
-    secret: changeme
+- kind: deposit
+  address: changeme
+  nsig: 1
+  max_balance: 0.0
+  secret: changeme
+- kind: hot
+  address: changeme
+  nsig: 1
+  max_balance: 100.0
+  secret: changeme
+- kind: warm
+  address: changeme
+  nsig: 1
+  max_balance: 1000.0
+  secret: changeme
 terraform:
-  credentials: "~/safe/opendax.json"
+  credentials: "~/safe/microkube.json"
   project: "example-opendax"
   region: "europe-west4"
   zone: "europe-west4-a"

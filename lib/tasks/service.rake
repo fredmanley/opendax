@@ -16,7 +16,7 @@ namespace :service do
   end
 
   desc 'Run Traefik (reverse-proxy)'
-  task :proxy, [:command] do |task, args|
+   task :proxy, [:command] do |task, args|
     args.with_defaults(:command => 'start')
 
     def start
@@ -228,7 +228,7 @@ namespace :service do
     args.with_defaults(:command => 'start')
 
     def start
-      Rake::Task["service:proxy"].invoke('start')
+#      Rake::Task["service:proxy"].invoke('start')
       Rake::Task["service:backend"].invoke('start')
       puts 'Wait 5 second for backend'
       sleep(5)

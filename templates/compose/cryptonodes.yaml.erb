@@ -2,24 +2,41 @@ version: '3.6'
 
 services:
   parity:
-    image: parity/parity:v2.5.8-stable
+    image: parity/parity:v2.5.9-stable
     restart: always
+    networks:
+      - default
+      - parity
+      - devkube_default
+      - demo_default
+      - streamex-uat_default
     command: |
       --chain=kovan
       --mode=active
-      --interface=all
-      --warp=true
+      --interface=0.0.0.0
+      --port=30303
+      --warp=false
       --snapshot-peers=10
-      --min-peers=5
-      --max-peers=10
+      --min-peers=50
+      --max-peers=100
       --jsonrpc-interface=0.0.0.0
       --jsonrpc-cors=all
       --jsonrpc-hosts=all
       --jsonrpc-apis=all
       --db-compaction=ssd
     volumes:
-      - ../data/parity:/home/parity/.local/share/io.parity.ethereum
+      - /data/parity:/home/parity/.local/share/io.parity.ethereum
     labels:
       traefik.enable: true
       traefik.frontend.rule: 'Host: eth.<%= @config['app']['domain'] %>'
       traefik.port: 8545
+
+networks:
+  devkube_default:
+    external: true
+  demo_default:
+    external: true
+  streamex-uat_default:
+    external: true
+  parity:
+    external: true

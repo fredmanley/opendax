@@ -3,6 +3,9 @@ version: '3.6'
 x-daemon: &peatio-daemon
   image: "<%= @config['images']['peatio'] %>"
   restart: always
+  networks:
+    - default
+    - parity
   env_file:
     - ../config/peatio.env
   volumes:
@@ -103,3 +106,7 @@ services:
     volumes:
       - ../config/applogic/management_api_v2.yml:/home/app/config/management_api_v2.yml
     command: bash -c "bundle exec rake event_api_listener"
+
+networks:
+  parity:
+    external: true
