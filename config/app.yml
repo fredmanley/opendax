@@ -18,8 +18,8 @@ images:
 vendor:
   frontend: git@github.com:openware/baseapp.git
 vault:
-  mode: development
-  token: changeme
+  mode: production
+  token: 0af5404d-f0ce-ef43-f9d3-052e7a0c64da
 storage:
   provider: "Google"
   bucketName: "opendax-barong-docs-bucket"
