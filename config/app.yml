@@ -10,9 +10,9 @@ license:
   url: "https://www.openware.com/api/v2/tenko"
   key: "JED4Z-ZZQOQ-GD3BU-X1GB5-QTA6B"
 images:
-  peatio: gcr.io/helios-stage/peatio:incremental-orderbook-5
+  peatio: gcr.io/helios-stage/peatio:6cbf92ce 
   barong: rubykube/barong:2.3.36
-  frontend: gcr.io/helios-stage/baseapp:2.3.20-enterprise # Check on quay.io/openware for latest tags
+  frontend: gcr.io/openware-production/baseapp:9feb04b
   tower: quay.io/openware/tower-lite:2.3.128
   postmaster: quay.io/openware/postmaster:2.3.4
 vendor:

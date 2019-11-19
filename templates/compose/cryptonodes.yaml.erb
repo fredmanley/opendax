@@ -10,6 +10,7 @@ services:
       - devkube_default
       - demo_default
       - streamex-uat_default
+      - assetum_default
     command: |
       --chain=kovan
       --mode=active
@@ -39,4 +40,6 @@ networks:
   streamex-uat_default:
     external: true
   parity:
+    external: true
+  assetum_default:
     external: true
