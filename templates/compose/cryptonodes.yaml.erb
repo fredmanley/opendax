@@ -11,6 +11,7 @@ services:
       - demo_default
       - streamex-uat_default
       - assetum_default
+      - chilliz_default
     command: |
       --chain=kovan
       --mode=active
@@ -42,4 +43,6 @@ networks:
   parity:
     external: true
   assetum_default:
+    external: true
+  chilliz_default:
     external: true
