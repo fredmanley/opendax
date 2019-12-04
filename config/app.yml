@@ -10,11 +10,11 @@ license:
   url: "https://www.openware.com/api/v2/tenko"
   key: "JED4Z-ZZQOQ-GD3BU-X1GB5-QTA6B"
 images:
-  peatio: gcr.io/helios-stage/peatio:6cbf92ce 
-  barong: rubykube/barong:2.3.36
-  frontend: gcr.io/openware-production/baseapp:9feb04b
-  tower: quay.io/openware/tower-lite:2.3.128
-  postmaster: quay.io/openware/postmaster:2.3.4
+  peatio: quay.io/openware/peatio:2.3.49
+  barong: quay.io/openware/barong:2.3.43
+  frontend: gcr.io/openware-production/baseapp:2.3.25-ad17a88
+  tower: quay.io/openware/tower-lite:2.3.136
+  postmaster: quay.io/openware/postmaster:2.3.5
 vendor:
   frontend: git@github.com:openware/baseapp.git
 vault:
@@ -30,9 +30,9 @@ twilio:
   account_sid: ACd944e3b2e1a4c5e37bfa8d9f11a245b6
   auth_token: 694e60aff87c5d1a66c272a62f931aab
 recaptcha:
-  type: "none"
-  siteKey: "changeme"
-  secretKey: "changeme"
+  type: "recaptcha"
+  siteKey: "6LcDMsAUAAAAACgHa6MDeTiYajiHpeDPURl1YEGC"
+  secretKey: "6LcDMsAUAAAAAMLVPFvMSURGF1BPHPHQTtnX7YjE"
 smtp:
   host: smtp.sendgrid.net
   port: 2525
